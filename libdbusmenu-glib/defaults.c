@@ -74,7 +74,7 @@ dbusmenu_defaults_class_init (DbusmenuDefaultsClass *klass)
 static void
 dbusmenu_defaults_init (DbusmenuDefaults *self)
 {
-	self->priv = DBUSMENU_DEFAULTS_GET_PRIVATE(self); 
+	self->priv = (DbusmenuDefaultsPrivate*) g_type_instance_get_private ((GTypeInstance*) (self), (DBUSMENU_TYPE_DEFAULTS));
 
 	self->priv->types = g_hash_table_new_full(g_str_hash, g_str_equal, g_free, (GDestroyNotify)g_hash_table_destroy);
 

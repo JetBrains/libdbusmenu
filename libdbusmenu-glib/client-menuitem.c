@@ -40,7 +40,7 @@ struct _DbusmenuClientMenuitemPrivate
 };
 
 #define DBUSMENU_CLIENT_MENUITEM_GET_PRIVATE(o) \
-(G_TYPE_INSTANCE_GET_PRIVATE ((o), DBUSMENU_TYPE_CLIENT_MENUITEM, DbusmenuClientMenuitemPrivate))
+((DbusmenuClientMenuitemPrivate*) g_type_instance_get_private ((GTypeInstance*) (o), (DBUSMENU_TYPE_CLIENT_MENUITEM)))
 
 static void dbusmenu_client_menuitem_class_init (DbusmenuClientMenuitemClass *klass);
 static void dbusmenu_client_menuitem_init       (DbusmenuClientMenuitem *self);
